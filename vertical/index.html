@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<title>Vertical Fixed Navigation</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- vertical -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/modernizr.js"></script>
+	<!-- hamburger -->
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600'>
+
+  	<!-- speakers cards -->
+    <link rel="stylesheet" href="../card10/css/style.css">
+	<link rel="stylesheet" href="../card9/css/style.css">
+	<link rel="stylesheet" href="../modal/modal.css">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Event Cards -->
+	<link rel="stylesheet" href="../hamburger1/css/core-style.css">
+    <link rel="stylesheet" href="../hamburger1/style.css">
+    <link rel="stylesheet" href="../card3/css/style.css">
+    <link href="../hamburger1/css/responsive.css" rel="stylesheet">
+
+    <!-- Hamburger  -->
+
+     <link rel="stylesheet" href="../hamburger2/css/vegas.min.css">
+     <link rel="stylesheet" href="../hamburger2/css/templatemo-style.css">
+
+     <!-- Heading Animation -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+     <link rel="stylesheet" href="css/heading.css">
+
+     <!-- contact form -->
+     <link rel="stylesheet" href="../form2/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="../form2/css/style.css">
+
+	<!-- Google form -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300|Roboto+Condensed:700" rel="stylesheet">
+	<style>
+		.heading{
+			border:5px 0px 5px 0px;
+			border-color:white;
+			border-style:solid;
+			text-align:center;
+
+		}
+		body {
+		  overflow: hidden;
+		}
+		/* Preloader */
+
+		#preloader {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color:#221D3D;
+		  /* change if the mask should have another color then white */
+		  z-index: 99999999;
+		  /* makes sure it stays on top */
+		}
+
+		#status {
+		  width:800px;
+		  height:700px;
+		  position: absolute;
+		  left: 50%;
+		  /* centers the loading animation horizontally one the screen */
+		  top: 50%;
+		  /* centers the loading animation vertically one the screen */
+		  background-image: url('loader.gif');
+		  /* path to your loading animation */
+		  background-repeat: no-repeat;
+		  background-position: center;
+		  margin: -400px 0 0 -350px;
+		  /* is width and height divided by two */
+		}
+			#cd-vertical-nav1 {
+		    position: fixed;
+		    right: 40px;
+		    top: 50%;
+		    bottom: auto;
+		    -webkit-transform: translateY(-50%);
+		    -moz-transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		    -o-transform: translateY(-50%);
+		    transform: translateY(-50%);
+		    z-index: 1;
+			}
+		    .logo{
+		    	/*background: #101010;*/
+		    	pointer-events: none;
+		    	transition: .3s;
+		    	left: 32px;
+			    top: 25px;
+			    /*transform: translate3d(50%, -50%, 0);
+			    transform-origin: center center;*/
+			    position: fixed;
+		    	z-index: 222;
+		    	width: 70px;
+		    	height: 70px;
+		    	/*line-height: 30px;
+		    	font-size: 25px;
+			    text-align: center;
+			    border-radius: 100%;*/
+		    }
+		    .fa{
+		    	background-color:#6674a3;
+		    	padding:10px;
+		    	border-radius:50%;
+		    	color:white;
+		    }
+		    .card-face__title,.card-face__name{
+		    	color:white;
+		    }
+		    .cont{
+		    	padding:10px;
+		    }
+		    p{
+		    	font-family: 'Montserrat', sans-serif;
+		    	color:white;
+		    }
+		    h1,h2,span{
+		    	font-family: 'Roboto Condensed', sans-serif;
+		    	color:white;
+		    }
+		    .single_gallery_item{
+		    	margin-bottom:20px;
+		    }
+		    .tit{
+		    	color:black;
+		    	font-size:20px !important;
+		    }
+		    .speaker_cont{
+		    	color:black;padding:20px;text-align:left;overflow-y:scroll;
+		    }
+		    .speaker_tit{
+		    	background-color:black;
+		    }
+		    input,textarea{
+		    	background-color:transparent !important;
+		    	color:white !important;
+		    }
+	</style>
+</head>
+<body>
+	<img src="../logo.png" class="logo">
+	<nav id="cd-vertical-nav">
+		<ul>
+			<li>
+				<a href="#section1" data-number="1">
+					
+					<span class="cd-label">Home</span>
+					<span class="cd-dot"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#section2" data-number="2">
+					
+					<span class="cd-label">About</span>
+					<span class="cd-dot"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#section3" data-number="3">
+					
+					<span class="cd-label">What we have?</span>
+					<span class="cd-dot"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#section4" data-number="4">
+					
+					<span class="cd-label">Speakers</span>
+					<span class="cd-dot"></span>
+				</a>
+			</li>
+			<!-- <li>
+				<a href="#section5" data-number="5">
+					
+					<span class="cd-label">Sponsors</span>
+					<span class="cd-dot"></span>
+				</a>
+			</li> -->
+			<li>
+				<a href="#section5" data-number="5">
+					
+					<span class="cd-label">Contact Us</span>
+					<span class="cd-dot"></span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<!-- Preloader --> <div id="preloader">   <div
+	id="status">&nbsp;</div> </div>
+	 <!-- Home --> 
+	<section id="section1" class="cd-section" style="background-image:url('../images/back_pic.jpg');background-size:cover">
+
+			<div class="menu-bg"></div>
+		    <div class="menu-burger">☰</div>
+
+		  	<div class="ham-menu">
+			    <div class="menu-items">
+			       <div class="container">
+			         <div class="row">
+			           <div class="col-md-offset-2 col-md-4 col-sm-6">
+			            <h1>Navigations</h1>
+			             <ul class="menu">
+			                <li><a href="#">Home</a></li>
+			                <li><a href="#section2">Our Studio</a></li>
+			                <li><a href="#">Journal</a></li>
+			                <li><a href="#">Start a project</a></li>
+			                <li><a href="#">Email Us</a></li>
+			            </ul>
+			           </div>
+
+			           <div class="col-md-4 col-sm-6">
+			             <address>
+			               <h1>Our Studio</h1>
+			               <p>1234 New Street View, <br> Kumasi, Ghana</p>
+			               <div class="google-map">
+			                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" allowfullscreen></iframe>
+			               </div>
+			             </address>
+			           </div> 
+
+			           <div class="col-md-12 col-sm-12">
+			             <ul class="social-icon">
+			              <li class="line"></li>
+			               <li><a href="https://fb.com/templatemo" class="fa fa-facebook"></a></li>
+			               <li><a href="#" class="fa fa-twitter"></a></li>
+			               <li><a href="https://plus.google.com/+templatemo" class="fa fa-google"></a></li>
+			               <li><a href="#" class="fa fa-instagram"></a></li>
+			             </ul>
+			           </div>
+			         </div>
+			       </div>
+			    </div>
+
+
+			     <!-- HOME -->
+			     <section id="home">
+			        <div class="overlay1"></div>
+			          <div class="container">
+			               <div class="row">
+			               		<div class="home-info" >
+                             		<img src="../images/cover_logo.png" style="width:40%"></div>
+                         		</div>
+			               </div>
+			          </div>
+			     </section>
+		 	</div>
+	</section>
+
+	<!-- About -->
+	<section id="section2" class="cd-section">
+			<div class="col-md-12" style="padding:50px">
+				<h1 class="heading" >
+		 			ABOUT US
+				</h1>
+			</div>
+
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<div class="col-md-8">
+						<p style="padding:30px;background-color:#6674A3">We, at The Entrepreneurship Cell, share the common belief that for India to emerge as a world power, the youth has to break the shackles of prejudices and inertia that has kept them from starting up. Creating an entrepreneurial ecosystem to provide the platform for individuals with creative minds and ideas with potential for substantial business opportunities, is what we strive towards continually. We enable smooth and efficient interaction between its principal components spanning students, faculty, working professionals, aspiring and existing entrepreneurs, mentors, angel investors and venture capitalists.</p>
+					</div>
+					<div class="col-md-2"></div>
+					<div class="col-md-2">
+						<h2>ATTENDEES</h2>
+						<h3>21000+</h3>
+						<h2>STARTUPS</h2>
+						<h3>680+</h3>
+						<h2>EVENTS</h2>
+						<h3>120+</h3>
+						<h2>SPEAKERS</h2>
+						<h3>150+</h3>
+					</div>
+				</div>
+
+			<div class="col-md-1"></div>
+	</section>
+
+
+	<!-- What we have -->
+	<section id="section3" class="cd-section">
+		<div class="col-md-12" class="heading">
+			<h1>
+			  WHAT WE HAVE FOR YOU?
+			</h1>
+		</div>	
+		<div class="karl-projects-menu" style="padding:50px">
+                <div class="text-center portfolio-menu">
+                    <button class="btn active" data-filter="*">ALL</button>
+                    <button class="btn" data-filter=".startup">STARTUP</button>
+                    <button class="btn" data-filter=".student">STUDENT</button>
+                    <button class="btn" data-filter=".prof">PROFFESIONAL</button>
+                </div>
+            </div>
+            <div class="container">
+            	<div class="col-md-1"></div>
+	            <div class="col-md-10">
+	                <div class="row karl-new-arrivals">
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item startup student">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing">
+	                            <div class="overlay"></div>
+	                            <div class="circle">
+	                                <img src="../images/Icons/Compi.png" style="z-index:100;width:50px">
+	                            </div>
+	                            <p class="tit">Competitions</p><br>
+	                            <p class="cont" style="color:black">We have a legacy of conducting most stunning competitions for students and professionals with an aim to aspire and motivate the youth of the country.</p>
+	                            
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item startup">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing">
+	                            <div class="overlay"></div>
+	                            <div class="circle">
+	                                <img src="../images/Icons/i_Hack.png" style="z-index:100">
+	                            </div>
+	                            <p class="tit" >I-Hack</p><br>
+	                            <p class="cont" style="color:black">Registrations open for I_Hack 2018 till 23rd January. Come and join like minded people to hack for winning prize worth INR 2,50,000, get free Texas Instruments components worth $60. </p>
+	                            
+	                            
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item startup prof">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing">
+	                            <div class="overlay"></div>
+	                            <div class="circle">
+	                                <img src="../images/Icons/IJF.png" style="z-index:100">
+	                            </div>
+	                            <p class="tit">IJF</p><br>
+	                            <p class="cont" style="color:black">The Internship and Job Fair aims at connecting startup enthusiast graduates/undergraduates to the startups so that they get the relevant experience in their desired field.Click here to visit last year's website.</p>
+	                            
+	                            
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item prof student">
+	                    	<div class="product-img">
+	                        <a href="#" class="card credentialing">
+	                            <div class="overlay"></div>
+	                            <div class="circle">
+	                                <img src="../images/Icons/Network.png" style="z-index:100">
+	                            </div>
+	                            <p class="tit">Networking</p><br>
+	                            <p class="cont" style="color:black">Bringing you the most awaited Networking Events of E-Summit 2018. Every startup, investor, mentor, entrepreneur, student and professional is invited to connect with the best in the country.</p>
+	                            
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item prof startup ">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing">
+	                            <div class="overlay"></div>
+	                            <div class="circle">
+
+	                                <img src="../images/Icons/TTMM.png" style="z-index:100">
+
+	                            </div>
+	                            <p class="tit">TTMM</p><br>
+	                            <p class="cont" style="color:black">Let's face it – Getting financial backing is difficult. For most, it's not a pleasant experience. We are trying to revolutionize this by exposing you to panelists who might back you with INR 1.5 Million in just 10 Minutes!</p>
+	                            
+	                            
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item startup">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing">
+	                            <div class="overlay"></div>
+	                            <div class="circle">
+
+	                                <img src="../images/Icons/Workshop.png" style="z-index:100">
+	                               
+	                            </div>
+	                            <p class="tit">Workshops</p><br>
+	                            <p class="cont" style="color:black">Discover, learn, develop skills that every entrepreneur requires in his journey. A Chance to learn from the best experts of the country.</p>
+	                            
+	                        </a>
+	                    	</div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-md-1"></div>
+           	</div>
+	</section>
+
+
+	<!-- Speakers -->
+	<section id="section4" class="cd-section" >
+		<div class="col-md-12" style="padding:50px">
+				<h1 class="heading" >
+		 			SPEAKERS
+				</h1>
+			</div>
+		<div class="container">
+            	<div class="col-md-1"></div>
+	            <div class="col-md-10">
+	                <div class="">
+	                    <div class="col-12 col-sm-6  col-md-4 single_gallery_item startup student">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing" style="background-color:transparent;">
+	                            <div class="card-face face-1"><!-- Menu trigger -->
+				            
+				            <div class="card-face__avatar"><!-- Bullet notification --><span class="card-face__bullet">in</span><!-- User avatar -->
+				              <img src="../images/speakers/arundathi.png" width="160" height="160" draggable="false"/></div><!-- Name -->
+				            <h2 class="card-face__name">Arundathi Bhattacharya</h2><!-- Title --><span class="card-face__title">Former Chairperson<br>SBI</span><!-- Cart Footer -->
+				            
+				            <button id="seven" class="button1">More Info</button>
+				          </div>
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item startup">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing" style="background-color:transparent;">
+	                           <div class="card-face face-1"><!-- Menu trigger -->
+				            
+				            <div class="card-face__avatar"><!-- Bullet notification --><span class="card-face__bullet">in</span><!-- User avatar -->
+				              <img src="../images/speakers/sachin.jpg" width="110" height="110" draggable="false"/></div><!-- Name -->
+				            <h2 class="card-face__name">Sachin Bansal</h2><!-- Title --><span class="card-face__title">Co-Founder<br>Flipkart</span><!-- Cart Footer -->
+				            
+				            <button id="seven1" class="button2">More Info</button>
+				          </div>
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item startup prof">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing" style="background-color:transparent;">
+	                            <div class="card-face face-1"><!-- Menu trigger -->
+				            
+				            <div class="card-face__avatar"><!-- Bullet notification --><span class="card-face__bullet">in</span><!-- User avatar -->
+				              <img src="../images/speakers/bhavish.jpg" width="110" height="110" draggable="false"/></div><!-- Name -->
+				            <h2 class="card-face__name">Bhavish Agarwal</h2><!-- Title --><span class="card-face__title">Founder & CEO<br>Ola</span><!-- Cart Footer -->
+				            
+				            <button id="seven" class="button3">More Info</button>
+				          </div>
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item prof student">
+	                    	<div class="product-img">
+	                        <a href="#" class="card credentialing" style="background-color:transparent;">
+	                            <div class="card-face face-1"><!-- Menu trigger -->
+				            
+				            <div class="card-face__avatar"><!-- Bullet notification --><span class="card-face__bullet">in</span><!-- User avatar -->
+				              <img src="../images/speakers/Shiv-Khera.jpg" width="110" height="110" draggable="false"/></div><!-- Name -->
+				            <h2 class="card-face__name">Shiv Khera</h2><!-- Title --><span class="card-face__title">Indian Writer<br>Business Coach</span><!-- Cart Footer -->
+				            
+				            <button id="seven" class="button4">More Info</button>
+				          </div>
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item prof startup ">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing" style="background-color:transparent;">
+	                           <div class="card-face face-1"><!-- Menu trigger -->
+				            
+				            <div class="card-face__avatar"><!-- Bullet notification --><span class="card-face__bullet">in</span><!-- User avatar -->
+				              <img src="../images/speakers/travis.jpg" width="110" height="110" draggable="false"/></div><!-- Name -->
+				            <h2 class="card-face__name">Travis Kalanick</h2><!-- Title --><span class="card-face__title">Founder<br>Uber</span><!-- Cart Footer -->
+				            
+				            <button id="seven" class="button5">More Info</button>
+				          </div>
+	                        </a>
+	                    	</div>
+	                    </div>
+	                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item startup">
+	                        <div class="product-img">
+	                        <a href="#" class="card credentialing" style="background-color:transparent;">
+	                            <div class="card-face face-1"><!-- Menu trigger -->
+				            
+				            <div class="card-face__avatar"><!-- Bullet notification --><span class="card-face__bullet">in</span><!-- User avatar -->
+				              <img src="../images/speakers/suresh.jpg" width="110" height="110" draggable="false"/></div><!-- Name -->
+				            <h2 class="card-face__name">Suresh Prabhu</h2><!-- Title --><span class="card-face__title">Former Union Minister<br>Govt. Of India</span><!-- Cart Footer -->
+				            
+				            <button id="seven" class="button6">More Info</button>
+				          </div>
+	                        </a>
+	                    	</div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-md-1"></div>
+           	</div>
+		</div>
+		<div id="modal-container1">
+		  	<div class="modal-background">
+			    <div class="modal">
+			      <!-- <div class="cont_principal"> -->
+			          <div class="cont_central">
+			              <div class="cont_modal cont_modal_active">
+			                  <div class="cont_photo">
+			                    <div class="cont_img_back">
+			                      <img src="../images/speakers/arundathi.png" alt="" />
+			                    </div>
+			                    <div class="cont_detalles">
+			                      <h3 class="speaker_tit">Arundathi Bhattachrya<br>Former Chairperson<br>SBI</h3>
+			                    </div>
+			                  </div>
+
+			                  <div class="cont_text_ingredients">
+			                    <div class="cont_over_hidden">
+			                      <span style="float:right;color:white;font-size:50px;cursor:pointer" id="close">&times</span>
+			             
+			     
+
+			                        <p class="speaker_cont">Arundhati Bhattacharya is an Indian banker and former Chairman of the State Bank of India.She is the first woman to be the Chairman of State Bank of India . In 2016, she was listed as the 25th most powerful woman in the world by Forbes. Bhattacharya joined SBI in September 1977. She is the first woman to lead an India-based Fortune India 500 company. Initially, she joined SBI in 1977 as a Probationary Officer at the age of 22 years. She has held several positions during her 36-year career with the bank including working in foreign exchange, treasury, retail operations, human resources and investment banking.</p>
+
+			                    </div>
+			                  </div>
+
+			                  
+			          </div>
+			            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+			                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+			            </svg>
+			    	</div>
+			  		</div>
+			  	</div>
+			 </div>
+		<div id="modal-container2">
+		  	<div class="modal-background">
+			    <div class="modal">
+			      <!-- <div class="cont_principal"> -->
+			          <div class="cont_central">
+			              <div class="cont_modal cont_modal_active">
+			                  <div class="cont_photo">
+			                    <div class="cont_img_back">
+			                      <img src="../images/speakers/sachin.jpg" alt="" />
+			                    </div>
+			                    <div class="cont_detalles">
+			                      <h3 class="speaker_tit">Sachin Bansal<br>Co-founder<br>Flipkart</p>
+			                    </div>
+			                  </div>
+
+			                  <div class="cont_text_ingredients">
+			                    <div class="cont_over_hidden">
+			                      <span style="float:right;color:white;font-size:50px;cursor:pointer" id="close2">&times</span>
+			                        <p></p>
+
+			                    </div>
+			                  </div>
+
+			                  
+			          </div>
+			            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+			                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+			            </svg>
+			    	</div>
+			  	</div>
+			</div>
+		</div>
+		<div id="modal-container3">
+		  	<div class="modal-background">
+			    <div class="modal">
+			      <!-- <div class="cont_principal"> -->
+			          <div class="cont_central">
+			              <div class="cont_modal cont_modal_active">
+			                  <div class="cont_photo">
+			                    <div class="cont_img_back">
+			                      <img src="../images/speakers/arundathi.png" alt="" />
+			                    </div>
+			                    <div class="cont_detalles">
+			                      <h3 class="speaker_tit">Bhavish Agarwal<br>Co-founder<br>Ola</h3>
+			                    </div>
+			                  </div>
+
+			                  <div class="cont_text_ingredients">
+			                    <div class="cont_over_hidden">
+			                      <span style="float:right;color:white;font-size:50px;cursor:pointer" id="close3">&times</span>
+			                        <p class="speaker_cont">Bhavish Aggarwal is the CEO and Co-founder of Ola. Bhavish is an alumnus of IIT - Bombay and worked with Microsoft Research for two years, where he filed 2 patents and published 3 papers in international journals. He started Ola (formerly Olacabs) in December 2010, along with Ankit Bhati, a fellow IIT Bombay alumni with a mission to build mobility for a billion Indians. Since then, Bhavish has led Ola to become one of India’s most valuable and respected startups in a short span of time. As an Indian startup built ground up, Ola continues to be the most preferred transportation platform with a wide range of mobility options ranging from auto-rickshaws to business class vehicles and most recently, bicycles! Ola has come a long way since inception.</p>
+
+			                    </div>
+			                  </div>
+
+			                  
+			          </div>
+			            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+			                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+			            </svg>
+			    	</div>
+			  	</div>
+			</div>
+		</div>
+		<div id="modal-container4">
+		  	<div class="modal-background">
+			    <div class="modal">
+			      <!-- <div class="cont_principal"> -->
+			          <div class="cont_central">
+			              <div class="cont_modal cont_modal_active">
+			                  <div class="cont_photo">
+			                    <div class="cont_img_back">
+			                      <img src="../images/speakers/Shiv-Khera.jpg" alt="" />
+			                    </div>
+			                    <div class="cont_detalles">
+			                      <h3 class="speaker_tit">Shiva Khera<br>Indian Author<br>Business Coach</h3>
+			                    </div>
+			                  </div>
+
+			                  <div class="cont_text_ingredients">
+			                    <div class="cont_over_hidden">
+			                      <span style="float:right;color:white;font-size:50px;cursor:pointer" id="close4">&times</span>
+			                        <p class="speaker_cont">Mr. SHIV KHERA is the founder of Qualified Learning Systems USA. An Author, Educator, Business Consultant and a successful Entrepreneur, he is a much sought-after speaker. He inspires and encourages individuals to realize their true potential. He has taken his dynamic personal messages to opposite sides of the globe, from the U.S. to Singapore. His 30 years of research & understanding has put organizations on a path of growth and fulfillment. Mr. Shiv Khera is the author of 14 books including the international bestseller</p>
+
+			                    </div>
+			                  </div>
+
+			                  
+			          </div>
+			            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+			                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+			            </svg>
+			    	</div>
+			  	</div>
+			</div>
+		</div>
+		<div id="modal-container5">
+		  	<div class="modal-background">
+			    <div class="modal">
+			      <!-- <div class="cont_principal"> -->
+			          <div class="cont_central">
+			              <div class="cont_modal cont_modal_active">
+			                  <div class="cont_photo">
+			                    <div class="cont_img_back">
+			                      <img src="../images/speakers/travis.jpg" alt="" />
+			                    </div>
+			                    <div class="cont_detalles">
+			                      <h3 class="speaker_tit">Travis Kalanick<br>Founder<br>Uber</h3>
+			                    </div>
+			                  </div>
+
+			                  <div class="cont_text_ingredients">
+			                    <div class="cont_over_hidden">
+			                      <span style="float:right;color:white;font-size:50px;cursor:pointer" id="close5">&times</span>
+			                        <p class="speaker_cont"></p>
+
+			                    </div>
+			                  </div>
+
+			                  
+			          </div>
+			            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+			                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+			            </svg>
+			    	</div>
+			  	</div>
+			</div>
+		</div>
+		<div id="modal-container6">
+		  	<div class="modal-background">
+			    <div class="modal">
+			      <!-- <div class="cont_principal"> -->
+			          <div class="cont_central">
+			              <div class="cont_modal cont_modal_active">
+			                  <div class="cont_photo">
+			                    <div class="cont_img_back">
+			                      <img src="../images/speakers/suresh.jpg" alt="" />
+			                    </div>
+			                    <div class="cont_detalles">
+			                      <h3 class="speaker_tit">Suresh Prabhu<br>Union Minister<br>Govt. of India</h3>
+			                    </div>
+			                  </div>
+
+			                  <div class="cont_text_ingredients">
+			                    <div class="cont_over_hidden">
+			                      <span style="float:right;color:white;font-size:50px;cursor:pointer" id="close6">&times</span>
+			                        <p class="speaker_cont">Suresh Prabhakar Prabhu is an Indian politician and currently serving as the Minister of Commerce & Industry and Civil Aviation under the Modi government. He is a Chartered Accountant by profession and a member of the Institute of Chartered Accountants of India.</p>
+
+			                    </div>
+			                  </div>
+
+			                  
+			          </div>
+			            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+			                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+			            </svg>
+			    	</div>
+			  	</div>
+			</div>
+		</div>
+	</section>
+		
+
+	<!-- Sponsors -->
+	<!-- <section id="section5" class="cd-section">	
+	</section> -->
+
+	<!-- Contact Us -->
+	<section id="section5" class="cd-section">
+		<div class="container">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<div class="col-md-12"><h1 style="padding:50px">Contact Us</h1></div>
+						<div class="col-md-6">
+							<p><span class="fa fa-envelope"></span>&nbsp&nbspesummit@ecell.in
+							</p><br>
+							<p><span class="fa fa-phone"></span>&nbsp&nbsp598422379052</p><br>
+							<p><span class="fa fa-map-marker"></span>&nbsp&nbspE-Cell Office<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspStudent Activity Center<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspIIT,Bombay<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPowai-400076.
+						</div>
+						<div class="col-md-6">
+							<form action="" style="width:100%">
+									
+									<div class="form-group">
+										<div class="form-wrapper">
+												<label for="">Name</label>
+												<input type="text" class="form-control">
+											</div>
+											<div class="form-wrapper">
+											<label for="">E-Mail</label>
+												<input type="text" class="form-control">
+										</div>
+									</div>
+									<div class="form-wrapper">
+										<label for="">Message</label>
+										<textarea rows="4" type="text" class="form-control">
+										</textarea>
+									</div>
+									<button>Submit</button>
+							</form>	
+						</div>
+					</div>
+					<div class="col-md-12" style="text-align:center;background-color:#6674A3;padding:20px;margin-top:150px;border-radius:10px 10px 0px 0px">
+						<div class="col-md-4">
+							<p style="color:white">For sponsorship Opportunities<br>Contact:Marketing@ecell.in
+						</div>
+						<div class="col-md-4">
+						<p style="color:white">For Speaking Opportunities<br>Contact:Veerupaksh@ecell.in</p>
+						</div>
+						<div class="col-md-4">
+						<p style="color:white">For Association Opportunities<br>Contact:sumit@ecell.in</p>
+						</div>
+						<h3 style="color:#221D3D">THE ENTREPRENEURSHIP CELL,IIT BOMBAY</h3>
+						<h3 style="color:white">Team 2018-19</h3>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+		</div>
+				
+
+	</section>
+	<section id="cd-vertical-nav1">
+		<a href="" target="_blank"><span class="fa fa-facebook fa-2x" ></span></a><br><br>
+		<a href="" target="_blank"><span class="fa fa-twitter fa-2x" ></span></a><br><br>
+		<a href="" target="_blank"><span class="fa fa-linkedin fa-2x" ></span></a><br><br>
+		<a href="" target="_blank"><span class="fa fa-instagram fa-2x" ></span></a>
+	</section>
+
+	<!-- vertical -->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/main.js"></script>
+
+
+	<!-- speakers cards -->
+	<script src="../card9/js/index.js"></script>
+	<script src="../card10/js/index.js"></script>
+	
+	<!-- Bootstrap -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- events cards -->
+	<script src="../hamburger1/js/popper.min.js"></script>
+    <script src="../hamburger1/js/plugins.js"></script>
+    <script src="../hamburger1/js/active.js"></script>
+
+    <!-- hamburger -->
+     <script src="../hamburger2/js/jquery.js"></script>
+    <script src="../hamburger2/js/vegas.min.js"></script>
+    <script src="../hamburger2/js/custom.js"></script>
+
+    <!-- Heading Animation -->
+    <script src="js/heading.js"></script>
+
+	<!-- modal -->
+	<script>
+	$('.button1').click(function(){
+	  var buttonId = $(this).attr('id');
+	  $('#modal-container1').removeAttr('class').addClass(buttonId);
+	  $('body').addClass('modal-active');
+	  open_close();
+	})
+
+	$('#close').click(function(){
+	  $('#modal-container1').addClass('out');
+	  $('body').removeClass('modal-active');
+	  close();
+	});
+	 $('.button2').click(function(){
+	  var buttonId = $(this).attr('id');
+	  $('#modal-container2').removeAttr('class').addClass(buttonId);
+	  $('body').addClass('modal-active');
+	  open_close();
+	})
+
+	$('#close2').click(function(){
+	  $('#modal-container2').addClass('out');
+	  $('body').removeClass('modal-active');
+	  close();
+	});
+	$('.button3').click(function(){
+	  var buttonId = $(this).attr('id');
+	  $('#modal-container3').removeAttr('class').addClass(buttonId);
+	  $('body').addClass('modal-active');
+	  open_close();
+	})
+
+	$('#close3').click(function(){
+	  $('#modal-container3').addClass('out');
+	  $('body').removeClass('modal-active');
+	  close();
+	});
+	$('.button4').click(function(){
+	  var buttonId = $(this).attr('id');
+	  $('#modal-container4').removeAttr('class').addClass(buttonId);
+	  $('body').addClass('modal-active');
+	  open_close();
+	})
+
+	$('#close4').click(function(){
+	  $('#modal-container4').addClass('out');
+	  $('body').removeClass('modal-active');
+	  close();
+	});
+	$('.button5').click(function(){
+	  var buttonId = $(this).attr('id');
+	  $('#modal-container5').removeAttr('class').addClass(buttonId);
+	  $('body').addClass('modal-active');
+	  open_close();
+	})
+
+	$('#close5').click(function(){
+	  $('#modal-container5').addClass('out');
+	  $('body').removeClass('modal-active');
+	  close();
+	});
+	$('.button6').click(function(){
+	  var buttonId = $(this).attr('id');
+	  $('#modal-container6').removeAttr('class').addClass(buttonId);
+	  $('body').addClass('modal-active');
+	  open_close();
+	})
+
+	$('#close6').click(function(){
+	  $('#modal-container6').addClass('out');
+	  $('body').removeClass('modal-active');
+	  close();
+	});
+	$('#studio').click(function(){
+		$('.ham-menu').css({"display":"none"})
+	});
+	$(window).on('load', function() { // makes sure the whole site is loaded 
+  	$('#status').fadeOut(); // will first fade out the loading animation 
+  	$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+  	$('body').delay(350).css({'overflow':'visible'});
+	});
+	</script>
+
+</body>
+</html>
