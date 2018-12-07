@@ -27,7 +27,7 @@
 
 .credentialing {
   --bg-color: #6674a3;
-  --bg-color-light: #e2fced;
+  --bg-color-light: white;
   --text-color-hover: #4C5656;
   --box-shadow-color: rgba(184, 249, 211, 0.48);
 }
